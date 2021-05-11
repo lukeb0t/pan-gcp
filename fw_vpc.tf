@@ -3,23 +3,23 @@
 module "vpc_mgmt" {
   source = "./modules/vpc/"
 
-  vpc                  = var.mgmt_vpc
-  subnets              = var.mgmt_subnet
-  cidrs                = var.mgmt_cidr
-  regions              = var.regions
-  allowed_sources      = var.mgmt_sources
-  allowed_protocol     = "TCP"
-  allowed_ports        = ["443", "22"]
+  vpc              = var.mgmt_vpc
+  subnets          = var.mgmt_subnet
+  cidrs            = var.mgmt_cidr
+  regions          = var.regions
+  allowed_sources  = var.mgmt_sources
+  allowed_protocol = "TCP"
+  allowed_ports    = ["443", "22"]
 }
 
 module "vpc_untrust" {
   source = "./modules/vpc/"
 
-  vpc                  = var.untrust_vpc
-  subnets              = var.untrust_subnet
-  cidrs                = var.untrust_cidr
-  regions              = var.regions
-  allowed_sources      = ["0.0.0.0/0"]
+  vpc             = var.untrust_vpc
+  subnets         = var.untrust_subnet
+  cidrs           = var.untrust_cidr
+  regions         = var.regions
+  allowed_sources = ["0.0.0.0/0"]
 }
 
 module "vpc_trust" {
