@@ -1,16 +1,3 @@
-provider "google" {
-  credentials = var.auth_file
-  project     = var.project_id
-  region      = var.regions[0]
-}
-
-provider "google-beta" {
-  credentials = var.auth_file
-  project     = var.project_id
-  region      = var.regions[0]
-}
-
-
 #-----------------------------------------------------------------------------------------------
 # Create bootstrap bucket for firewalls
 module "bootstrap_common" {
