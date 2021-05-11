@@ -1,3 +1,17 @@
+terraform {
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+      version = "3.67.0"
+    }
+    google-beta = {
+      source = "hashicorp/google-beta"
+        version     = "> 3.0.0"
+    }
+  }
+  required_version = "~> 0.14"
+}
+
 resource "google_compute_health_check" "default" {
   name = "${var.name}-check-0"
 
