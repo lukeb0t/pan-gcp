@@ -1,4 +1,4 @@
-
+data "google_compute_zones" "available" {}
 #-----------------------------------------------------------------------------------------------
 # Create bootstrap bucket for firewalls
 module "bootstrap_common" {
